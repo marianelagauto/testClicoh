@@ -14,14 +14,17 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 import django_heroku
 from .settings_env import *
+import os
 
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'test-clicoh.herokuapp.com']
 
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SECRET_KEY = '!s8+qz*h!d&x-$xfx8wz(@err_3ga%&7@!f)gavgud%22&s%%w'
 
 # Application definition
 
