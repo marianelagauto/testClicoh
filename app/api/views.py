@@ -5,6 +5,9 @@ from .models import Product
 from .serializers import OrderDetailSerializer, OrderSerializer, ProductSerializer
 from rest_framework import viewsets, status
 from rest_framework.response import Response
+# Permissions
+from rest_framework.permissions import IsAuthenticated
+# from users.permissions import IsStandardUser
 
 
 class ProductViewSet(viewsets.ModelViewSet):

@@ -6,6 +6,7 @@ __pycache__/
 db.sqlite3
 media
 
+app/settings_env.py
 # Backup files # 
 *.bak 
 
