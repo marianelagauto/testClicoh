@@ -12,11 +12,9 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
-# import django_heroku
+import django_heroku
 from .settings_env import *
 import os
-
-# django_heroku.settings(locals())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -118,3 +116,5 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+
+django_heroku.settings(locals())

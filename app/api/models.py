@@ -1,10 +1,7 @@
-from dataclasses import replace
-import string
-from xml.dom import ValidationErr
 from django.db import models
 from django.db.models import Sum
 from django.forms import ValidationError
-from django.core.validators import MaxValueValidator, MinValueValidator 
+from django.core.validators import MinValueValidator 
 import requests
 
 class Product(models.Model):
@@ -12,11 +9,16 @@ class Product(models.Model):
     price = models.FloatField()
     stock = models.IntegerField(default=0)
 
-    def decrease_stock(self, cuantity):
+    def check_stock(self, cuantity):
         if self.stock < cuantity:
-            raise ValidationError("El sotck no es suficiente",code="invalid")
-        else:
-            self.stock = self.stock - cuantity
+            raise ValidationError("El stock no es suficiente",code="invalid")
+
+    def decrease_stock(self, cuantity):
+        self.stock = self.stock - cuantity
+
+    def restore_stock(self, cuantity):
+        # entiendo que aca no es necesario ver si cuantity > 0
+        self.stock = self.stock + cuantity
 
     def __str__(self):
         return self.name
