@@ -24,6 +24,13 @@ ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'test-clicoh.herokuapp.com
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!s8+qz*h!d&x-$xfx8wz(@err_3ga%&7@!f)gavgud%22&s%%w'
 
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    }
+}
+
 # Application definition
 
 INSTALLED_APPS = [
