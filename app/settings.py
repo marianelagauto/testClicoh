@@ -17,36 +17,42 @@ import dj_database_url
 
 # from .settings_env import *
 import os
+import sys
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0', 'localhost', '127.0.0.1', 'test-clicoh.herokuapp.com']
+ALLOWED_HOSTS = ['0.0.0.0', 'localhost',
+                 '127.0.0.1', 'test-clicoh.herokuapp.com']
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '!s8+qz*h!d&x-$xfx8wz(@err_3ga%&7@!f)gavgud%22&s%%w'
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd5sv21iu70ivjr',
-        'USER': 'cbcpeiiooabvkk',
-        'PASSWORD': '1139596ee1344874f99accc5f831476724099a1ee1b2677e38d74bffe50d6bec',
-        'HOST': 'ec2-34-230-198-12.compute-1.amazonaws.com',
-        'PORT': 5432,
+# Updates Database Configuration
+if 'test' in sys.argv:
+    # Configuration for test database
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'd2es2vkppb0uv5',
+            'USER': 'kpxetokbulheow',
+            'PASSWORD': '24fdf4cd9a6c6bcda4f058036b2d21f03b20132526108a9524854fba97835d81',
+            'HOST': 'ec2-52-73-149-159.compute-1.amazonaws.com',
+            'PORT': 5432,
+        }
     }
-}
-
-TEST_DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'd2es2vkppb0uv5',
-        'USER': 'kpxetokbulheow',
-        'PASSWORD': '24fdf4cd9a6c6bcda4f058036b2d21f03b20132526108a9524854fba97835d81',
-        'HOST': 'ec2-52-73-149-159.compute-1.amazonaws.com',
-        'PORT': 5432,
+else:
+  # Default configuration
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': 'd5sv21iu70ivjr',
+            'USER': 'cbcpeiiooabvkk',
+            'PASSWORD': '1139596ee1344874f99accc5f831476724099a1ee1b2677e38d74bffe50d6bec',
+            'HOST': 'ec2-34-230-198-12.compute-1.amazonaws.com',
+            'PORT': 5432,
+        }
     }
-}
 
 # Application definition
 
