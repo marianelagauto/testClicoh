@@ -30,13 +30,13 @@ Header: Authorization Bearer
 Body: Token <access_token>
 ```
 
-## Listar todos los productos
+## List products
 ###### GET /api/products/
 
-## Obtener un producto
+## Get a product
 ###### GET /api/products/{id}
 
-## Crear un producto
+## Create new product
 ###### POST /api/products/
 
 ```
@@ -47,8 +47,20 @@ Body:
         "stock": <integer>
     }
 ```
+## Edit a product
+###### PUT /api/products/{id}
 
-## Eliminar un producto
+```
+Body: 
+    {
+        "id": <integer>,
+        "name": <string>,
+        "price": <integer>,
+        "stock": <integer>
+    }
+```
+
+## Delete a product
 ###### DELETE /api/products/{id}
 
 
