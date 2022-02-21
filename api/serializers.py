@@ -38,7 +38,7 @@ class OrderSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         details = validated_data.pop('details')            
         errors = {'errors': []}
-        if check_repeated_products(details, errors):
+        if check_repeated_products(details):
             errors['errors'] = {'order': 'La orden contiene productos repetidos'}
 
         for detail in details:  
