@@ -63,6 +63,54 @@ Body:
 ## Delete a product
 ###### DELETE /api/products/{id}
 
+## List orders with details
+###### GET /api/orders/
+
+## Get an order with details
+###### GET /api/orders/{id}
+
+## Create new order
+###### POST /api/orders/
+
+```
+Body: 
+    {
+        "date_time": "2022-02-17 01:23:00",
+        "details": [
+            {
+                "product": 3,
+                "cuantity": 1
+            },
+            {
+                "product": 4,
+                "cuantity": 1
+            }
+        ]
+    }
+```
+## Edit an order
+###### PUT /api/orders/{id}
+
+```
+Body: 
+    {
+        "date_time": "2022-02-17 01:23:00",
+        "details": [
+            {
+                "product": 3,
+                "cuantity": 1
+            },
+            {
+                "product": 4,
+                "cuantity": 1
+            }
+        ]
+    }
+```
+
+## Delete an order 
+###### DELETE /api/orders/{id}
+
 
 
 
