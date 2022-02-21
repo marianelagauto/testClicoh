@@ -1,18 +1,18 @@
 # testClicoh
 
-## API with django rest framework.
+## API with Django Rest Framework.
 
-### Installation
+## Installation
 
-Use the requirements file to install all dependencies.
+Install all dependencies.
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### API Usage
-#### Authentication
-##### Generate a token 
+## API Usage
+
+## Generate token
 ###### POST /api/token/
 
 ```
@@ -23,18 +23,21 @@ Body:
     }
 ```
 
-## Header para todos los endpoints
+## Authorization header
+
+```
 Header: Authorization Bearer
 Body: Token <access_token>
+```
 
-#### Listar todos los productos
-##### GET /api/products/
+## Listar todos los productos
+###### GET /api/products/
 
-#### Obtener un producto
-##### GET /api/products/{id}
+## Obtener un producto
+###### GET /api/products/{id}
 
-#### Crear un producto
-##### POST /api/products/
+## Crear un producto
+###### POST /api/products/
 
 ```
 Body: 
@@ -45,8 +48,8 @@ Body:
     }
 ```
 
-#### Eliminar un producto
-##### DELETE /api/products/{id}
+## Eliminar un producto
+###### DELETE /api/products/{id}
 
 
 
