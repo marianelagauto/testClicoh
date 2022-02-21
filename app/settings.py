@@ -38,7 +38,14 @@ DATABASES = {
 }
 
 TEST_DATABASES = {
-    'default': dj_database_url.config(env='TEST_DATABASE_URL')
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd2es2vkppb0uv5',
+        'USER': 'kpxetokbulheow',
+        'PASSWORD': '24fdf4cd9a6c6bcda4f058036b2d21f03b20132526108a9524854fba97835d81',
+        'HOST': 'ec2-52-73-149-159.compute-1.amazonaws.com',
+        'PORT': 5432,
+    }
 }
 
 # Application definition
