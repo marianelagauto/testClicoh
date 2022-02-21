@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 import django_heroku
+import dj_database_url
+
 # from .settings_env import *
 import os
 
@@ -26,9 +28,17 @@ SECRET_KEY = '!s8+qz*h!d&x-$xfx8wz(@err_3ga%&7@!f)gavgud%22&s%%w'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd5sv21iu70ivjr',
+        'USER': 'cbcpeiiooabvkk',
+        'PASSWORD': '1139596ee1344874f99accc5f831476724099a1ee1b2677e38d74bffe50d6bec',
+        'HOST': 'ec2-34-230-198-12.compute-1.amazonaws.com',
+        'PORT': 5432,
     }
+}
+
+TEST_DATABASES = {
+    'default': dj_database_url.config(env='TEST_DATABASE_URL')
 }
 
 # Application definition
