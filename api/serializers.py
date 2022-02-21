@@ -3,7 +3,7 @@ from .models import Order, OrderDetail, Product
 from rest_framework import serializers
 
 
-def check_repeated_products(details, errors):
+def check_repeated_products(details):
     products = [ detail['product'].id for detail in details]
     if len(set(products)) != len(products):
         return True
