@@ -23,11 +23,19 @@ Body:
     }
 ```
 
+```
+Response: 
+    {
+        "refresh": <refresh>,
+        "access": <access>
+    }
+```
+
 ## Authorization header
 
 ```
 Header: Authorization Bearer
-Body: Token <access_token>
+Body: Token <access>
 ```
 
 ## List products
@@ -78,12 +86,12 @@ Body:
         "date_time": "2022-02-17 01:23:00",
         "details": [
             {
-                "product": 3,
-                "cuantity": 1
+                "product": <product_id>,
+                "cuantity": <cuantity>
             },
             {
-                "product": 4,
-                "cuantity": 1
+                "product": <product_id>,
+                "cuantity": <cuantity>
             }
         ]
     }
@@ -97,12 +105,14 @@ Body:
         "date_time": "2022-02-17 01:23:00",
         "details": [
             {
-                "product": 3,
-                "cuantity": 1
+                "id": <id>,
+                "product": <product_id>,
+                "cuantity": <cuantity>
             },
             {
-                "product": 4,
-                "cuantity": 1
+                "id": <id>,
+                "product": <product_id>,
+                "cuantity": <cuantity>
             }
         ]
     }
