@@ -39,6 +39,9 @@ if 'test' in sys.argv:
             'PASSWORD': '24fdf4cd9a6c6bcda4f058036b2d21f03b20132526108a9524854fba97835d81',
             'HOST': 'ec2-52-73-149-159.compute-1.amazonaws.com',
             'PORT': 5432,
+            'TEST': {
+                'NAME': 'd2es2vkppb0uv5', #This is an important entry
+            }
         }
     }
 else:
@@ -51,6 +54,9 @@ else:
             'PASSWORD': '1139596ee1344874f99accc5f831476724099a1ee1b2677e38d74bffe50d6bec',
             'HOST': 'ec2-34-230-198-12.compute-1.amazonaws.com',
             'PORT': 5432,
+            'TEST': {
+                'NAME': 'd5sv21iu70ivjr', #This is an important entry
+            }
         }
     }
 
